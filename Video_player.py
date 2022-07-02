@@ -39,6 +39,13 @@ class Video_player(QMainWindow, Ui_video_player):
         #播放影片
         self.qMediaPlayer.setSource(QUrl.fromLocalFile(self.filePath))
         self.qMediaPlayer.play()
+        #播完
+        self.qMediaPlayer.mediaStatusChanged.connect(self.videoEnd)
+
+    def videoEnd(self, status):
+        if status == QMediaPlayer.EndOfMedia:
+            self.qMediaPlayer.setSource(QUrl.fromLocalFile(self.filePath))
+            self.qMediaPlayer.pause()
 
     def updatePosition(self):
         self.videoSlider.setValue(self.qMediaPlayer.position())
