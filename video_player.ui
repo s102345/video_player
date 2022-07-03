@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>1314</width>
-    <height>889</height>
+    <height>906</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>播放影片</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>90</x>
      <y>40</y>
      <width>1190</width>
-     <height>846</height>
+     <height>848</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,1">

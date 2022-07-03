@@ -3,6 +3,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PySide6.QtCore import QFile
 from Ui_menu import Ui_menu
 from Video_player import Video_player
+from qt_material import apply_stylesheet
 
 class Menu(QMainWindow, Ui_menu):
     def __init__(self):
@@ -13,8 +14,12 @@ class Menu(QMainWindow, Ui_menu):
         self.setAcceptDrops(True)
         self.uploadBtn.clicked.connect(self.upload_video)
 
+
+
     def upload_video(self):
         fileName, fileType = QFileDialog.getOpenFileName(self, "Open file", "./", "MKV Files (*.mkv);;MP4 Files (*.mp4)")
+        if(fileName == ''):
+            return
         self.close()
         self.playWidget = Video_player(fileName)
         self.playWidget.show()
@@ -34,5 +39,6 @@ class Menu(QMainWindow, Ui_menu):
 if __name__ == '__main__':
     app = QApplication(sys.argv)  
     window = Menu()
+    apply_stylesheet(app, theme = 'dark_teal.xml')
     window.show()
     app.exec()

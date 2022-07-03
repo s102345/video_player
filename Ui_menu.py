@@ -26,13 +26,13 @@ class Ui_menu(object):
         menu.resize(836, 600)
         self.centralwidget = QWidget(menu)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.widget = QWidget(self.centralwidget)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(50, 30, 731, 521))
-        self.verticalLayout = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(self.centralwidget)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(50, 30, 731, 521))
+        self.verticalLayout = QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.widget)
+        self.label = QLabel(self.layoutWidget)
         self.label.setObjectName(u"label")
         font = QFont()
         font.setFamilies([u"\u5fae\u8edf\u6b63\u9ed1\u9ad4 Light"])
@@ -42,7 +42,7 @@ class Ui_menu(object):
 
         self.verticalLayout.addWidget(self.label)
 
-        self.upload_frame = QFrame(self.widget)
+        self.upload_frame = QFrame(self.layoutWidget)
         self.upload_frame.setObjectName(u"upload_frame")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -54,13 +54,13 @@ class Ui_menu(object):
         self.upload_frame.setFrameShadow(QFrame.Plain)
         self.upload_frame.setLineWidth(1)
         self.upload_frame.setMidLineWidth(1)
-        self.widget1 = QWidget(self.upload_frame)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(240, 50, 251, 291))
-        self.verticalLayout_2 = QVBoxLayout(self.widget1)
+        self.layoutWidget1 = QWidget(self.upload_frame)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(220, 50, 290, 291))
+        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.widget1)
+        self.label_2 = QLabel(self.layoutWidget1)
         self.label_2.setObjectName(u"label_2")
         font1 = QFont()
         font1.setFamilies([u"\u5fae\u8edf\u6b63\u9ed1\u9ad4"])
@@ -70,12 +70,16 @@ class Ui_menu(object):
 
         self.verticalLayout_2.addWidget(self.label_2)
 
-        self.uploadBtn = QPushButton(self.widget1)
+        self.uploadBtn = QPushButton(self.layoutWidget1)
         self.uploadBtn.setObjectName(u"uploadBtn")
+        sizePolicy.setHeightForWidth(self.uploadBtn.sizePolicy().hasHeightForWidth())
+        self.uploadBtn.setSizePolicy(sizePolicy)
         self.uploadBtn.setFont(font1)
 
         self.verticalLayout_2.addWidget(self.uploadBtn)
 
+        self.verticalLayout_2.setStretch(0, 4)
+        self.verticalLayout_2.setStretch(1, 1)
 
         self.verticalLayout.addWidget(self.upload_frame)
 
@@ -97,4 +101,3 @@ class Ui_menu(object):
         self.label_2.setText(QCoreApplication.translate("menu", u"\u8acb\u5c07\u5f71\u7247\u62d6\u66f3\u81f3\u6b64\u8655", None))
         self.uploadBtn.setText(QCoreApplication.translate("menu", u"\u9078\u64c7\u6a94\u6848", None))
     # retranslateUi
-

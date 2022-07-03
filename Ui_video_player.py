@@ -22,14 +22,14 @@ class Ui_video_player(object):
     def setupUi(self, video_player):
         if not video_player.objectName():
             video_player.setObjectName(u"video_player")
-        video_player.resize(1314, 889)
-        self.widget = QWidget(video_player)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(90, 40, 1190, 846))
-        self.verticalLayout = QVBoxLayout(self.widget)
+        video_player.resize(1314, 906)
+        self.layoutWidget = QWidget(video_player)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(90, 40, 1190, 848))
+        self.verticalLayout = QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.bufferWidget = QWidget(self.widget)
+        self.bufferWidget = QWidget(self.layoutWidget)
         self.bufferWidget.setObjectName(u"bufferWidget")
         self.bufferWidget.setMinimumSize(QSize(1024, 768))
 
@@ -37,7 +37,7 @@ class Ui_video_player(object):
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.startTimeLbl = QLabel(self.widget)
+        self.startTimeLbl = QLabel(self.layoutWidget)
         self.startTimeLbl.setObjectName(u"startTimeLbl")
         font = QFont()
         font.setFamilies([u"\u5fae\u8edf\u6b63\u9ed1\u9ad4"])
@@ -46,13 +46,13 @@ class Ui_video_player(object):
 
         self.horizontalLayout_2.addWidget(self.startTimeLbl)
 
-        self.videoSlider = QSlider(self.widget)
+        self.videoSlider = QSlider(self.layoutWidget)
         self.videoSlider.setObjectName(u"videoSlider")
         self.videoSlider.setOrientation(Qt.Horizontal)
 
         self.horizontalLayout_2.addWidget(self.videoSlider)
 
-        self.EndTimeLbl = QLabel(self.widget)
+        self.EndTimeLbl = QLabel(self.layoutWidget)
         self.EndTimeLbl.setObjectName(u"EndTimeLbl")
         self.EndTimeLbl.setFont(font)
 
@@ -63,13 +63,13 @@ class Ui_video_player(object):
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.playBtn = QPushButton(self.widget)
+        self.playBtn = QPushButton(self.layoutWidget)
         self.playBtn.setObjectName(u"playBtn")
         self.playBtn.setFont(font)
 
         self.horizontalLayout.addWidget(self.playBtn)
 
-        self.pauseBtn = QPushButton(self.widget)
+        self.pauseBtn = QPushButton(self.layoutWidget)
         self.pauseBtn.setObjectName(u"pauseBtn")
         self.pauseBtn.setFont(font)
 
